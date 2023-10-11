@@ -1,6 +1,7 @@
 /*------------------------------------*\
 #FONTS
 \*------------------------------------*/
+@import url("https://use.typekit.net/xfr3eid.css");
 
 
 /*------------------------------------*\
@@ -34,7 +35,7 @@
     --global-color-neutral-900: #222222;
 
     /* global page settings */
-    --global-page-backgroundColor: var(--global-color-neutral-000);
+    --global-page-backgroundColor: var(--global-color-primary-100);
     --global-page-color: var(--global-color-neutral-900);
     --global-selection-backgroundColor: var(--global-color-primary-100);
 
@@ -106,6 +107,7 @@ body {
 *:before,
 *:after {
     box-sizing: inherit;
+    font-family: "mulish-variable", sans-serif;
 }
 
 /*
@@ -220,15 +222,15 @@ hr {
     margin: 0 0 var(--global-whitespace);
 }
 
-a {
+/* a {
     --link-color: var(--global-color-primary-500);
     color: var(--link-color);
     outline-color: var(--link-outlineColor, var(--link-color));
     outline-width: medium;
     outline-offset: 2px;
-}
+} */
 
-a:visited {
+/* a:visited {
     color: var(--link-visited-color, var(--link-color));
 }
 
@@ -242,7 +244,7 @@ a:active {
 
 a:focus {
     color: var(--link-focus-color, var(--link-color));
-}
+} */
 
 label,
 input {
@@ -506,13 +508,104 @@ input::placeholder {
 /*------------------------------------*\
 #COMPONENTS
 \*------------------------------------*/
+.c-heading{
+    text-align: center;
+    margin: 0;
+    color: var(--global-color-primary-800);
+}
 
+.c-header{
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.c-main{
+    min-height: calc(100vh - 8rem - 5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-main__inner{
+    margin: 3rem;
+    margin-top: 1rem;
+    max-width: 40rem;
+    position: relative;
+}
+
+.c-footer{
+    background-color: var(--global-color-primary-400);
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & p {
+        font-size: 0.8rem;
+        color: var(--global-color-neutral-100);
+        margin: 0;
+    }
+}
+
+.c-joke{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.c-link{
+    color: var(--global-color-primary-000);
+    text-decoration: none;
+    transition: 0.5s;
+}
+.c-link:hover{
+    color: var(--global-color-primary-800);
+}
+
+.c-btn{
+    border: solid 2px var(--global-color-primary-400);
+    padding: 0.8rem 1rem;
+    border-radius: 200px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: var(--global-color-primary-600);
+    right: 0;
+    position: absolute;
+}
+.c-btn:hover{
+    border: solid 2px var(--global-color-primary-800);
+}
+
+.c-loading{
+    gap: .5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    /* todo schimmer/blur animation */
+}
+
+.c-loading__placeholder{
+    display: block;
+    width: 30%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--global-color-primary-400);
+}
+
+.c-loading__placeholder--half{
+    width: 50%;
+}
+
+.c-loading__placeholder--full{
+    width: 100%;
+}
 
 /*------------------------------------*\
 #UTILITIES
 \*------------------------------------*/
-
+.u-hidden{
+    display: none !important;
+}
 /*
     Utilities: color
     ---
